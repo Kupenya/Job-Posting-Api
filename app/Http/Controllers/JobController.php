@@ -60,24 +60,43 @@ class JobController extends BaseController
         return $this->sendResponse(new JobResource($job), "Job Found Successfully...");
     }
 
-    // * Display the specified job by name.
+    // * Search the specified job by name.
 
     public function search(Request $request)
     {
-        $query = $request->get('q');
+        $query = $request->get('query');
         $jobs = Job::where('name', 'like', '%'. $query . '%')
                     ->orWhere('description', 'like', '%' . $query . '%')
                     ->get();
-        return response()->json($jobs);
+        return view('search-results', ['jobs' => $jobs]);
     }
 
     /**
      * Show the form for filtering the specified job.
      */
-    public function filter_input(Job $job)
+    
+    public function filter(Request $request)
     {
-        
+        $query = Job::query();
+
+        if ($request->has('category_id')) {
+            $query->where('category_id', $request->input('category_id'));
+        }
+
+        if ($request->has('location')) {
+            $query->where('location', 'like', '%' . $request->input('location') . '%');
+        }
+
+        if ($request->has('salary_range')) {
+            $salary_range = explode('-', $request->input('salary_range'));
+            $query->whereBetween('salary', [$salary_range[0], $salary_range[1]]);
+        }
+
+        $jobs = $query->get();
+
+        return view('jobs.index', compact('jobs'));
     }
+
 
     /**
      * Update the specified job in storage.
