@@ -17,7 +17,7 @@ The Back End Engineering project aims to build an API for a job posting platform
 The system have an API that allows authenticated users to create new job postings. This API will require authentication and accept inputs such as job name, location, salary, job description, and other relevant information.
 
 - Job Update API<br>
-- The system allows authenticated users to update their job postings through an API. This API will require authentication and allow users to modify job details such as job description, salary, job location, and other relevant information.
+The system allows authenticated users to update their job postings through an API. This API will require authentication and allow users to modify job details such as job description, salary, job location, and other relevant information.
 
 - Job Deletion API<br>
  The system allows authenticated users to delete their job postings through an API. This API will require authentication and will remove the job posting from the platform.
