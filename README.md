@@ -12,25 +12,26 @@
 The Back End Engineering project aims to build an API for a job posting platform that will enable users to create job postings, edit and update them, and perform other related tasks. This API will be designed to handle all the job details, including the job name, description, requirements, salary, location, and any other pertinent details. The system was built using the Laravel framework.
 
 ##Features of this project
-- Job Creation API 
+
+- Job Creation API<br> 
 The system have an API that allows authenticated users to create new job postings. This API will require authentication and accept inputs such as job name, location, salary, job description, and other relevant information.
 
-- Job Update API
+- Job Update API<br>
 - The system allows authenticated users to update their job postings through an API. This API will require authentication and allow users to modify job details such as job description, salary, job location, and other relevant information.
 
-- Job Deletion API
+- Job Deletion API<br>
  The system allows authenticated users to delete their job postings through an API. This API will require authentication and will remove the job posting from the platform.
  
-- Job Search API
+- Job Search API<br>
  The system has an API that will allow authenticated users to search for job postings based on specific criteria such as job title, location, or company name.
  
-- Job Filtering API
+- Job Filtering API<br>
 The system has an API that will allow authenticated users to filter job postings based on specific criteria such as job category, salary range, or job type.
 
-- User Authentication and Authorization
+- User Authentication and Authorization<br>
  The APIs is secured using Laravel Passport, It uses an OAuth2 server to perform it's authentication, creating tokens for user applications that request to interface with the API it protects, and only granting them access if thier tokens are validated. Users would be authorized before creating, updating or deleting job postings.
  
-- Database
+- Database<br>
   MySQL database is used to store all information.
   
 
